@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SSO GRP (GROUP)</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="SSO GRP — Elite offensive-cyber & defensive engineering. Coming soon.">
+  <style>
+    :root{
+      --bg-1: #0f1724; /* near-black */
+      --glass: rgba(255,255,255,0.06);
+      --accent: rgba(255,255,255,0.85);
+      --muted: rgba(255,255,255,0.65);
+    }
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+    /* creative gradient */
+    body{
+      display:flex;align-items:center;justify-content:center;
+      background: linear-gradient(135deg,#081126 0%, #0b2440 30%, #2b1a4a 60%, #1a2b4a 100%);
+      background-attachment: fixed;color:var(--accent);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .card{
+      width:min(980px,92%);
+      border-radius:18px; padding:36px; box-sizing:border-box;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 40px rgba(3,6,23,0.6); backdrop-filter: blur(6px);
+      display:grid; grid-template-columns: 1fr 380px; gap:28px; align-items:center;
+    }
+
+    /* Responsive: tablet -> single column */
+    @media (max-width:880px){
+      .card{ grid-template-columns: 1fr; padding:24px; gap:20px }
+    }
+
+    /* Mobile tuning: smaller padding, touch targets and stacked form */
+    @media (max-width:600px){
+      .card{ padding:16px; border-radius:14px; gap:16px }
+      .brand{gap:10px}
+      .logo{width:52px;height:52px;padding:6px}
+      h1{font-size:20px}
+      p.lead{font-size:14px}
+      .progress-wrap{padding:14px}
+      .bar{height:10px}
+      .actions{gap:12px}
+      .countdown{font-size:18px}
+      form.subscribe{display:flex;flex-direction:column;align-items:stretch}
+      input[type='email']{flex:none;width:100%;padding:12px 14px}
+      button.cta{width:100%;padding:12px}
+      .pill{padding:6px 10px;font-size:12px}
+      footer.small{font-size:12px}
+    }
+
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:64px;height:64px;flex:0 0 64px;border-radius:12px;display:inline-grid;place-items:center;background:var(--glass);padding:8px}
+    .logo img{max-width:100%;max-height:100%;display:block}
+    h1{margin:0;font-size:24px;letter-spacing:0.2px}
+    p.lead{color:var(--muted);margin:12px 0 18px;line-height:1.45}
+
+    /* progress wrapper */
+    .progress-wrap{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .progress-label{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:10px}
+    .bar{width:100%;height:12px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;position:relative}
+    .bar > i{position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:999px;background:linear-gradient(90deg,#7ee7f8 0%, #9b8cff 55%, #f7a1ff 100%);box-shadow:0 4px 18px rgba(155,140,255,0.18);transition:width 700ms ease-in-out}
+    .bar .stripe{position:absolute;inset:0;background-image:linear-gradient(45deg, rgba(255,255,255,0.04) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.04) 75%, transparent 75%, transparent);background-size:40px 40px;opacity:0.5;animation:move 3s linear infinite}
+    @keyframes move{from{background-position:0 0}to{background-position:40px 0}}
+
+    .meta{font-size:13px;color:var(--muted);margin-top:12px}
+
+    /* right column */
+    .actions{display:flex;flex-direction:column;gap:14px}
+    .card.small{padding:12px}
+    .countdown{font-weight:600;font-size:20px}
+    .ct-text{font-size:13px;color:var(--muted)}
+
+    form.subscribe{display:flex;gap:10px}
+    input[type='email']{flex:2;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--accent);outline:none}
+    button.cta{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,#6ce7f6,#a28cff);color:#081126;font-weight:700;cursor:pointer}
+    button.cta[disabled]{opacity:0.6;cursor:default}
+
+    .socials{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .pill{border-radius:999px;padding:8px 12px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+
+    footer.small{margin-top:16px;font-size:12px;color:rgba(255,255,255,0.45)}
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <section>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><img src="dark.png" alt="SSO GRP logo"></div>
+        <div>
+          <h1 id="title">SSO GRP (GROUP) is Under Construction</h1>
+          <p class="lead">We’re building an elite offensive-cyber & defensive engineering practice. Our work transforms adversary-grade research into auditable mitigations, detection content, and hardened firmware — delivered under strict legal oversight and rigorous governance.</p>
+        </div>
+      </div>
+
+      <div class="progress-wrap" aria-hidden="false">
+        <div class="progress-label">
+          <div><strong>Launch progress</strong></div>
+          <div id="percent" class="meta">0%</div>
+        </div>
+        <div class="bar" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-labelledby="title" aria-valuenow="0">
+          <i id="barFill"></i>
+          <div class="stripe" style="mix-blend-mode:overlay"></div>
+        </div>
+        <div class="meta">We follow strict Rules of Engagement, full compliance (NIST/CMMC/SOC2/ISO), and provide Red Team as a Service, adversary emulation, and R&amp;D sprints for vetted partners.</div>
+      </div>
+
+      <footer class="small" style="display:flex;justify-content:center;">Want early access or partnership inquiries? Use the form on the right or email <span class="pill">support@ssogroup.space</span></footer>
+    </section>
+
+    <aside class="actions" aria-label="Contact & status">
+      <div class="card small" style="background:transparent;padding:16px;display: block;">
+        <div style="display:flex;justify-content:start;align-items:center">
+          <div>
+            <div class="countdown" id="eta">Preparing launch</div>
+            <div class="ct-text">Focused pilots, retainers, and controlled R&amp;D for government & enterprise.</div>
+          </div>
+        </div>
+
+        <div style="height:20px"></div>
+        <form class="subscribe" id="subscribeForm" onsubmit="return false;">
+          <input id="email" type="email" placeholder="Your email — get updates" aria-label="Email address" required>
+          <button id="subBtn" class="cta">Notify me</button>
+        </form>
+        <div id="subMsg" class="ct-text" style="margin-top:8px"></div>
+      </div>
+
+      <div class="card small" style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+        <div style="display:flex;justify-content:start;width:100%">
+          <div class="pill">SSO GRP</div>
+          <div class="pill">SecOps × Offensive R&D</div>
+        </div>
+
+        <div style="display:flex;justify-content:start;width:100%;margin-top:8px">
+          <div class="socials">
+            <a class="pill" href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a class="pill" href="#" aria-label="Twitter">X</a>
+            <a class="pill" href="#" aria-label="Contact">Contact</a>
+          </div>
+        </div>
+
+      </div>
+
+    </aside>
+  </main>
+
+  <script>
+    (function(){
+      const bar = document.getElementById('barFill');
+      const pct = document.getElementById('percent');
+      const eta = document.getElementById('eta');
+      const subForm = document.getElementById('subscribeForm');
+      const emailInput = document.getElementById('email');
+      const subMsg = document.getElementById('subMsg');
+      const subBtn = document.getElementById('subBtn');
+
+      // Simulated progress animation: grows to a soft 'pre-launch' number and then pulses
+      let progress = 0;
+      const target = 78; // visually show progress toward launch
+      function step(){
+        progress += Math.random()*6 + 3; // random ease
+        if(progress >= target){
+          progress = target;
+          clearInterval(timer);
+          // subtle micro-progress to suggest active work
+          setInterval(()=>{
+            const jitter = (Math.sin(Date.now()/600)+1)/2*4; // 0-4
+            const show = Math.min(100, target + jitter);
+            bar.style.width = show + '%';
+            pct.textContent = Math.round(show) + '%';
+          },700);
+          eta.textContent = 'Beta access (invite-only)';
+        }
+        bar.style.width = Math.round(progress) + '%';
+        pct.textContent = Math.round(progress) + '%';
+      }
+      const timer = setInterval(step,650);
+
+      // lightweight subscribe simulation (no real backend)
+      subForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const em = emailInput.value.trim();
+        if(!em) return;
+        subBtn.disabled = true;
+        subBtn.textContent = 'Sending...';
+        setTimeout(()=>{
+          subMsg.textContent = 'Thanks — we received your request. We will contact vetted partners and customers directly.';
+          subBtn.textContent = 'Notify me';
+          subBtn.disabled = false;
+          emailInput.value = '';
+        },1100 + Math.random()*900);
+      });
+
+      // Accessibility: show keyboard focus outline for users who navigate via keyboard
+      function handleFirstTab(e) {
+        if (e.key === 'Tab') document.documentElement.classList.add('show-focus');
+        window.removeEventListener('keydown', handleFirstTab);
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
+</body>
+</html>
